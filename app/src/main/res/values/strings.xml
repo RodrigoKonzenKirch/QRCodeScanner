@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QRCode Scanner</string>
+    <string name="title">Scanned Value:</string>
+    <string name="empty_message">Press the button to scan.</string>
+    <string name="button_qr_code">QR Code</string>
+    <string name="button_scan">Scan</string>
 </resources>

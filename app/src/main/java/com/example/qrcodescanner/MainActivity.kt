@@ -19,6 +19,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.qrcodescanner.ui.theme.QRCodeScannerTheme
@@ -89,18 +90,18 @@ fun MainScreen(
 
         ) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = "QR Code")
-                Text(text = "Scan")
+                Text(text = stringResource(R.string.button_qr_code))
+                Text(text = stringResource(R.string.button_scan))
             }
         }
 
-        Text(text = "Scanned Value:", modifier = Modifier.padding(16.dp), fontSize = 30.sp)
+        Text(text = stringResource(R.string.title), modifier = Modifier.padding(16.dp), fontSize = 30.sp)
         Text(
             modifier = Modifier.padding(16.dp),
             text = if (scannedValue.value.isNullOrBlank())
-                "Press the button to scan."
+                stringResource(R.string.empty_message)
             else
-                scannedValue.value ?: "Press the button to scan."
+                scannedValue.value ?: stringResource(R.string.empty_message)
         )
     }
 }
