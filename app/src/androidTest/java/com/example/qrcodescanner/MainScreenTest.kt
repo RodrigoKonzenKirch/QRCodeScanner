@@ -17,11 +17,11 @@ class MainScreenTest{
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    lateinit var context: Context
+    private lateinit var context: Context
 
     @Before
     fun setUp() {
-        context = ApplicationProvider.getApplicationContext<Context>()
+        context = ApplicationProvider.getApplicationContext()
 
     }
 
