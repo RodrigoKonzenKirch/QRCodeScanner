@@ -89,17 +89,18 @@ fun isModuleAvailable(context: Context): Boolean {
     val moduleInstall = ModuleInstall.getClient(context)
     var isAvailable = false
 
-    moduleInstall.areModulesAvailable(gmsBarcodeScanner).addOnSuccessListener{
+    moduleInstall.areModulesAvailable(gmsBarcodeScanner).addOnSuccessListener {
         isAvailable = it.areModulesAvailable()
     }
 
     return isAvailable
 }
 
-fun scanQRCode(context: Context, scannedValue: MutableState<String?> ) {
+fun scanQRCode(context: Context, scannedValue: MutableState<String?>) {
     val options = GmsBarcodeScannerOptions.Builder()
         .setBarcodeFormats(
-            Barcode.FORMAT_QR_CODE)
+            Barcode.FORMAT_QR_CODE
+        )
         .enableAutoZoom()
         .build()
 
@@ -138,7 +139,11 @@ fun MainScreen(
             }
         }
 
-        Text(text = stringResource(R.string.title), modifier = Modifier.padding(16.dp), fontSize = 30.sp)
+        Text(
+            text = stringResource(R.string.title),
+            modifier = Modifier.padding(16.dp),
+            fontSize = 30.sp
+        )
         Text(
             modifier = Modifier.padding(16.dp),
             text = if (scannedValue.value.isNullOrBlank())
